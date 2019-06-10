@@ -11,22 +11,18 @@ What is the largest prime factor of the number 600851475143 ?
 NUMBER = 600851475143
 
 def is_prime_number(number):
-    if number <= 1:
-        return False
-
+    if number == 2:
+        return True
     for i in range(2, number):
         if number % i == 0:
             return False
-
     return True
-
 
 def find_largest_prime_factor():
     global NUMBER
     for i in range(2, NUMBER):
         if NUMBER % i == 0 and is_prime_number(NUMBER // i):
             return NUMBER // i
-
 
 if __name__ == "__main__":
     largest = find_largest_prime_factor()
